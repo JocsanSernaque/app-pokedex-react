@@ -1,38 +1,219 @@
-.App {
+:root{
+  --color: rgb(255, 255, 255);
+  --background-color: rgb(95, 93, 93);
+  --box-shadow-primary: 0px 0px 8px rgba(0, 0, 0, 0.25);
+  --box-shadow-second: 0px 0px 8px #fac71b; 
+}
+.main{  
+  color: var(--color);
+  position: relative;  
+}
+
+.notFound{
   text-align: center;
+  font-size: 30px;
+  padding-top: 50px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Navbar{
+  height: 100px;
+  display: flex;  
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: rgb(27, 29, 29);
+  z-index: 10;
+}
+.Navbar-logo{  
+  width: 120px;  
+  padding: 20px;
+}
+/* --------Search-----------*/
+.Search-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  width: 320px;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  margin: auto;  
+  margin-top: 120px;
+  overflow: hidden;
+}
+.Search-container-input{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  grid-gap: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Search-input{
+  display: flex;
+  padding: 15px;
+  background-color: transparent;
+  color: var(--color);  
+  outline: none;
+  border: none;
+}
+.Search-container-input button{  
+  background-color: #fac71b;
+  border: none;  
+  color: rgb(49, 49, 49);
+  overflow: hidden;
+  cursor: pointer; 
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Search-container-input button:hover{
+  box-shadow: var(--box-shadow-second);
+}
+
+.Pagination-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+}
+
+.Pagination{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.Pagination button{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  background-color: transparent;
+  margin: 5px;
+  cursor: pointer;
+}
+.Pokedex{
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;   
+}
+
+.loading{ 
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  background-color: transparent;
+  font-size: 25px;
+  margin-top: 50px;
+}
+
+.Pokemon-container{
+  display: flex;
+  align-items: center; 
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;      
+  box-shadow: var(--box-shadow-primary);
+  border-radius: 8px;
+  margin: 50px;  
+  transition: all .5s;
+}
+.Pokemon-container:hover{
+  transform: scale(1.05);
+  transition: all .5s;
+  box-shadow: 0 0 10px #fac71b;
+}
+
+.Pokemon-container-card{
   display: flex;
   flex-direction: column;
+  width: 100%; 
+}
+
+.Pokemon-card-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+.Pokemon-card-header h3{
+  text-transform: capitalize;
+}
+.Card-type{
+  display: flex;
+  flex-direction: row;
+}
+.Card-type-text{
+  padding: 8px 5px;
+  background-color: var(--background-color);
+  color: var(--color);
+  text-transform: capitalize;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+.Pokemon-img-poke{
+  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Pokemon-img-poke img{
+  display: flex;
+  width: 120px;
+  height: 120px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Pokemon-container-body{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;  
+  background-color: var(--background-color);   
+  border-radius: 30px 30px 0 0;
+}
+.Pokemon-body-card{
+  width: 100%;
+  margin: 0 25px 0 10px;
+}
+.Pokemon-body-stat{  
+  list-style-type: none;
+  padding: 5px 10px
+}
+.Stat-list{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+.Stat-list .Stat{  
+  font-weight: 300;
+  margin-right: 5px;
+}
+
+.Pokemon-btn-favorite{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  /* border-radius: 5px; */
+  background-color: var(--background-color);
+  cursor: pointer;
+}
+.Pokemon-favorite{ font-size: 20px; }
+.Img-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+  width: 100%;
+  margin-top: 50px;
+}
+.ImgNotFound{
+  margin: auto;
+  padding: 30px;
+  border-radius: 40px;
 }
